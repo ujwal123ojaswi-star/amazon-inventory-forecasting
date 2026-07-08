@@ -40,4 +40,8 @@ Plotly, Streamlit.
 
 ## Live dashboard
 
+Static read-only preview (pre-computed data, no live filters): https://inventory-demo-ujwal123ojaswi-2369s-projects.vercel.app
+
+Full interactive app (live filters, auto-rebuild): `<add your Streamlit Community Cloud URL here once deployed>`
+
 `<add your Streamlit Community Cloud URL here once deployed>`
