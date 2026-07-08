@@ -80,6 +80,26 @@ Real wall-clock timings, measured end to end via `python build.py` (raw data gen
 
 ---
 
+## Differentiators — how these projects differ from the research they're compared against
+
+The research cited above is stronger on rigor and real-world scale; these projects are stronger on being a self-contained, inspectable, runnable system. Both sides of that trade-off, honestly:
+
+**Portfolio Optimization vs. DeMiguel, Garlappi & Uppal (2009)**
+- *What the paper does that this project doesn't:* a rigorous, multi-decade **out-of-sample rolling backtest** across 14 different optimization models and 7 real datasets — the exact test needed to know whether Max Sharpe would actually have beaten Equal Weight going forward. This project computes both portfolios over the same window (in-sample), which is a real methodological limitation stated above, not hidden.
+- *What this project does that the paper doesn't:* it's a live, interactive tool — real-time price fetch, a full visual Monte Carlo cloud (6,000 simulated portfolios) rendered against the solved frontier, and three named portfolios you can flip between. The paper's contribution is a statistical finding in a table; this project's contribution is a hands-on instrument for *seeing* what the finding means geometrically.
+
+**Rideshare Demand Forecasting vs. published taxi/rideshare demand papers**
+- *What the papers do that this project doesn't:* train and validate on **real trip-record data** (e.g., NYC TLC GPS/dispatch logs) at genuine spatial resolution, sometimes with deep-learning architectures that edge out Random Forest by 2–3 points of R² (noted above).
+- *What this project does that the papers don't:* runs end to end — data generation through a trained, evaluated model to an interactive 7-day forecast — in under a minute, with zero API keys, signups, or multi-gigabyte downloads. The realistic zone archetypes (commuter, airport, nightlife) are a deliberate design choice to keep the demand patterns interpretable and inspectable rather than opaque real GPS clusters.
+
+**Inventory & Supply Chain vs. industry benchmark reports (E2open, supply-chain research)**
+- *What the reports do that this project doesn't:* aggregate real operational statistics **across many actual companies and industries** at a scale and diversity no single synthetic catalog can replicate — that's what makes "30% under-provisioned" a credible industry-wide number in the first place.
+- *What this project does that the reports don't:* every number is traceable to an open formula over an open, regenerable dataset. There's no proprietary ERP data or black-box aggregation — the safety-stock, reorder-point, and ABC-classification logic can be read, checked, and re-run by anyone, which the benchmark reports (by nature of aggregating confidential enterprise data) can't offer.
+
+**The common thread:** the research earns its credibility from scale, real data, and rigorous validation methodology; these projects earn theirs from being fully transparent, reproducible, and immediately runnable — a demonstration of correct methodology on inspectable data, not a replacement for the peer-reviewed studies' scale or rigor.
+
+---
+
 ## Summary
 
 | Project | Own result | Literature benchmark | Verdict |
