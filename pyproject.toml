@@ -1,0 +1,28 @@
+[project]
+name = "amazon-inventory-forecasting"
+version = "1.0.0"
+description = "Retail inventory analytics: synthetic multi-SKU demand history -> forecasting -> reorder-point/safety-stock optimization -> Streamlit dashboard."
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scikit-learn>=1.4",
+    "duckdb>=1.1",
+    "pyarrow>=16.0",
+    "streamlit>=1.36",
+    "plotly>=5.22",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ingest", "app"]

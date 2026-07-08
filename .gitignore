@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.venv_build/
+.pytest_cache/
+data/*.parquet
+data/*.duckdb
+data/*.duckdb.wal
+!data/.gitkeep
+.env
